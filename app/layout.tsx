@@ -19,8 +19,23 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhtasham Shafi — Robotics, AI & Software Engineer",
-  description: "Personal portfolio of Muhtasham Shafi — young Bangladeshi engineer building robotics, AI, and software for real-world impact.",
+  title: "Muhtasham Shafi | Student Innovator & Developer",
+  description:
+    "Portfolio of Muhtasham Shafi - young Bangladeshi engineer building robotics, AI, and software for real-world impact.",
+
+  metadataBase: new URL("https://muhtashamshafi.com"),
+
+  openGraph: {
+    title: "Muhtasham Shafi",
+    description: "Robotics, AI & Software Projects",
+    url: "https://muhtashamshafi.com",
+    siteName: "Muhtasham Shafi Portfolio",
+    type: "website",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
