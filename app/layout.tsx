@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "https://muhtashamshafi.com/og-v2.png",
         width: 1200,
         height: 630,
       },
