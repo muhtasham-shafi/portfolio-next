@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #080b10;
+  --color-ink-2: #0f141d;
+  --color-ink-3: #141b27;
+  --color-line: rgba(255, 255, 255, 0.05);
+  --color-line-strong: rgba(255, 255, 255, 0.12);
+
+  --color-cyan: #4cc9f0;
+  --color-cyan-glow: #6fe3ff;
+  --color-gold: #f4b740;
+  --color-gold-soft: #ffd27a;
+  --color-crimson: #ff5d5d;
+  --color-green: #61d095;
+
+  --color-text: #f0f4f9;
+  --color-text-soft: #94a3b8;
+  --color-text-mute: #475569;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-xl: 24px;
+  --radius-sm: 12px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan);
+}
