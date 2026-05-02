@@ -31,6 +31,13 @@ export const metadata: Metadata = {
     url: "https://muhtashamshafi.com",
     siteName: "Muhtasham Shafi Portfolio",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 
   icons: {
